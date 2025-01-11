@@ -1,0 +1,21 @@
+.container {
+  width: 300px;
+  background-color: rgb(244, 244, 245);
+  border: 1px solid darkgray;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.login {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 13px;
+}
+.login input[type="submit"] {
+  background-color: black;
+  color: white;
+  border-radius: 50px;
+}
