@@ -1,6 +1,6 @@
 <?php
 session_start();
-include "../db_conn.php";
+include "../../db_conn.php";
 
 $userid = $_POST['id'];
 $userpw = $_POST['password'];
@@ -11,7 +11,7 @@ $result = mysqli_query($db_conn, $sql);
 $row = mysqli_fetch_array($result);
 
 if (!$row) {    // 아이디 존재여부 확인 : 식별
-    echo"<script>
+    echo "<script>
     alert(\"일치하는 아이디가 없습니다.\");
     history.back();
     </script>";
@@ -26,7 +26,8 @@ if (!$row) {    // 아이디 존재여부 확인 : 식별
     } else {    // 로그인 - 세션 변수 생성 - 사용자의 이름과 id 저장
         $_SESSION['name'] = $row['username'];
         $_SESSION['id'] = $row['userid'];
-        header("Location: ../main/index.php");
+        mysqli_close($db_conn);
+        header("Location: ../../main/index.php");
     }
 }
 ?>

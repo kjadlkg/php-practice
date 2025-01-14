@@ -1,5 +1,5 @@
 <?php
-include "../db_conn.php";
+include "../../db_conn.php";
 
 $pw = $_POST['password'];
 $hashed_pw = hash('sha256', $pw);
@@ -15,7 +15,7 @@ if ($result === false) {
 } else { ?>
 <script>
 alert("회원가입이 완료되었습니다.");
-location.href = "../main/index.php";
+location.href = "../../main/index.php";
 </script>
 <?php
 }

@@ -8,8 +8,8 @@ include "db_conn.php";
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/style.css" />
-    <script type="text/javascript" src="../js/regist.js" defer></script>
+    <link rel="stylesheet" href="../../css/style.css" />
+    <script type="text/javascript" src="../../js/regist.js" defer></script>
     <title>회원가입</title>
 </head>
 
@@ -19,7 +19,7 @@ include "db_conn.php";
     if (isset($_SESSION["name"])) {
         echo "<script>
         alert(\"이미 로그인 하셨습니다.\");
-        location.href = \"../main/index.php\";
+        location.href = \"../../main/index.php\";
         </script>";
     } else { ?>
     <div id="regist_wrap" class="wrap">
@@ -48,7 +48,7 @@ include "db_conn.php";
                     <span class="caution_message">&nbsp;&nbsp;&nbsp;"-" 없이 숫자만 입력</span>
                     <input type="submit" class="form_btn" id="join_button" value="회원가입" />
                 </p>
-                <p><a href="login.php" class="login_text">로그인</a></p>
+                <p><a href="../login/login.php" class="login_text">로그인</a></p>
             </form>
         </div>
     </div>

@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../../css/style.css" />
     <title>로그인</title>
 
     <script type="text/javascript">
@@ -33,7 +33,7 @@
     if (isset($_SESSION["name"])) {
         echo "<script>
             alert(\"이미 로그인 하셨습니다.\");
-            location.href = \"../main/index.php\";
+            location.href = \"../../main/index.php\";
         </script>";
     } else { ?>
     <div id="login_wrap" class="wrap">
@@ -46,7 +46,7 @@
                 <p><input type="password" id="pw" name="password" placeholder="비밀번호" /></p>
                 <span class="err_pw"></span>
                 <p><input class="form_btn" type="submit" value="로그인" /></p>
-                <p class="regist_btn"><a href="regist.php">회원가입</a></p>
+                <p class="regist_btn"><a href="../regist/regist.php">회원가입</a></p>
             </form>
         </div>
     </div>
