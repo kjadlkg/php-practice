@@ -1,8 +1,8 @@
 <?php
 include "../../db_conn.php";
 
-$pw = $_POST['password'];
-$hashed_pw = hash('sha256', $pw);
+$userpw = $_POST['password'];
+$hashed_pw = password_hash($userpw, PASSWORD_DEFAULT);
 
 $email = $_POST['email'] . '@' . $_POST['email_adress'];
 $sql = "INSERT INTO member (idx, username, userid, userpw, useremail, userphone, regdate) 

@@ -1,7 +1,3 @@
-<?php
-include "db_conn.php";
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -16,7 +12,7 @@ include "db_conn.php";
 <body>
     <?php
     session_start();
-    if (isset($_SESSION["name"])) {
+    if (isset($_SESSION["name"])) {     // 로그인 상태 확인
         echo "<script>
         alert(\"이미 로그인 하셨습니다.\");
         location.href = \"../../main/index.php\";
