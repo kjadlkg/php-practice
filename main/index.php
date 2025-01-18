@@ -13,9 +13,9 @@
     include "../db_conn.php";
 
     session_start();
-    $name = isset($_SESSION["name"]) ? $_SESSION["name"] :"";
+    $name = isset($_SESSION["name"]) ? $_SESSION["name"] : "";
     if (!$name) {
-        header("../member/login/login.php");
+        header("location:../member/login/login.php");
         exit;
     }
     $sql = "SELECT * FROM board order by regdate desc";
@@ -26,6 +26,7 @@
     <p class="center"><a href="index.php"><b style="color:black">게시판</b></a></p>
     <div class="center">
         <b><?php echo $_SESSION['name'] ?>님, 반갑습니다.</b>
+        <!-- <button class="btn" onclick="location.href='../mypage/modify.php?user=<?= $_SESSION['id'] ?>'">내 정보</button> -->
         <button class="btn" onclick="location.href='../mypage/modify.php'">내 정보</button>
         <button class="btn" onclick="location.href='../member/login/logout.php'">로그아웃</button>
     </div>
@@ -45,18 +46,18 @@
             <tbody>
                 <?php
                 while ($rows = mysqli_fetch_assoc($result)) {
-                ?>
-                <tr>
-                    <td width="50"><?php echo $rows['writer'] ?></td>
-                    <td width="400">
-                        <a href="../board/read.php">
-                            <?php echo $rows['title'] ?>
-                        </a>
-                    </td>
-                    <td width="50"><?php echo $rows['views'] ?></td>
-                    <td width="200"><?php echo $rows['regdate'] ?></td>
-                </tr>
-                <?php
+                    ?>
+                    <tr>
+                        <td width="50"><?php echo $rows['writer'] ?></td>
+                        <td width="400">
+                            <a href="../board/read.php?user=<?php echo $rows['idx'] ?>">
+                                <?php echo $rows['title'] ?>
+                            </a>
+                        </td>
+                        <td width="50"><?php echo $rows['views'] ?></td>
+                        <td width="200"><?php echo $rows['regdate'] ?></td>
+                    </tr>
+                    <?php
                 }
                 ?>
             </tbody>

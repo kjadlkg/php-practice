@@ -8,9 +8,13 @@ session_unset();
 if (ini_get("session.use_cookies")) {
     $params = session_get_cookie_params();
     setcookie(  // 세션 ID가 저장된 쿠키 강제 만료
-        session_name(), '', time() -42000,
-        $params["path"], $params["domain"],
-        $params["secure"], $params["httponly"] 
+        session_name(),
+        '',
+        time() - 42000,
+        $params["path"],
+        $params["domain"],
+        $params["secure"],
+        $params["httponly"]
     );
 }
 
@@ -19,6 +23,6 @@ session_destroy();
 ?>
 
 <script>
-alert("로그아웃 되었습니다.");
-location.replace('index.php');
+    alert("로그아웃 되었습니다.");
+    location.replace('../../main/index.php');
 </script>
