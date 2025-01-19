@@ -33,7 +33,7 @@
     <hr>
     <br>
 
-    <div>
+    <div class="wrap">
         <table class="center">
             <thead class="center">
                 <tr>
@@ -50,7 +50,7 @@
                     <tr>
                         <td width="50"><?php echo $rows['writer'] ?></td>
                         <td width="400">
-                            <a href="../board/read.php?user=<?php echo $rows['idx'] ?>">
+                            <a href="../board/read.php?idx=<?php echo $rows['idx'] ?>">
                                 <?php echo $rows['title'] ?>
                             </a>
                         </td>

@@ -20,7 +20,7 @@
     } else { ?>
         <div class="wrap">
             <form method="post" action="write_proc.php" onsubmit="return checkBlank()">
-                <table id="outertable" cellpadding=2>
+                <table class="outertable" cellpadding="2">
                     <tr>
                         <td>
                             <p><b>게시글 작성</b></p>
@@ -28,11 +28,11 @@
                     </tr>
                     <tr>
                         <td>
-                            <table id="innertable">
+                            <table class="innertable">
                                 <tr>
                                     <td>작성자</td>
                                     <td><input type="hidden" name="name"
-                                            value="<?= $_SESSION['name'] ?>"><?= $_SESSION['name'] ?></td>
+                                            value="<?php echo $_SESSION['name'] ?>"><?php echo $_SESSION['name'] ?></td>
                                 </tr>
                                 <tr>
                                     <td>제목</td>
@@ -43,8 +43,8 @@
                                     <td><textarea id="content" name="content"></textarea></td>
                                 </tr>
                             </table>
-                            <input type="hidden" name="id" value="<?= $_SESSION['id'] ?>"><?php echo $_SESSION['id']; ?>
-                            <p><input type="submit" id="form_btn" value="등록"></p>
+                            <input type="hidden" name="id" value="<?php echo $_SESSION['id'] ?>"><?php echo $_SESSION['id'] ?>
+                            <p><input type="submit" class="btn" id="form_btn" value="등록"></p>
                         </td>
                     </tr>
                 </table>

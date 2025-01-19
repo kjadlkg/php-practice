@@ -25,7 +25,7 @@ if (!$num) {    // 아이디 존재여부 확인 : 식별
         exit;
     } else {    // 로그인 성공 > 세션 변수 생성
         $_SESSION['name'] = $row['username'];
-        $_SESSION['id'] = $row['id'];
+        $_SESSION['id'] = $row['userid'];
         mysqli_close($db_conn);
         header("Location: ../../main/index.php");
     }

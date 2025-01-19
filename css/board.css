@@ -29,13 +29,16 @@ body {
   justify-content: center;
   align-items: center;
 }
-#outertable {
+.outertable {
   width: auto;
   border: 0;
   padding-top: 50px;
   align-items: center;
 }
-#innertable {
+table {
+  border: black;
+}
+table.innertable {
   border-collapse: separate;
   border-spacing: 1px;
   text-align: left;
@@ -43,18 +46,34 @@ body {
   border-top: 1px solid #ccc;
   margin: 20px 10px;
 }
-#innertable tr {
+table.innertable tr {
   width: 50px;
   padding: 10px;
   font-weight: bold;
   /* vertical-align: top; */
   border-bottom: 1px solid #ccc;
 }
-#innertable td {
+table.innertable td {
   width: 80px;
   padding: 10px;
   /* vertical-align: top; */
   border-bottom: 1px solid #ccc;
+}
+table.innertable .writer {
+  font-weight: bold;
+  text-align: center;
+  background-color: white;
+  width: 80px;
+  height: 33px;
+  background-color: #eeeeee;
+}
+table.innertable .writer2 {
+  background-color: white;
+  font-weight: bold;
+  width: 350px;
+  height: 33px;
+  padding-left: 10px;
+
 }
 table td {
   height: 35;
@@ -67,7 +86,7 @@ table p {
   margin-top: 15px;
   margin-bottom: 10px;
 }
-#innertable input {
+table.innertable input {
   border: 1px solid gray;
   width: 400px;
   height: 35px;
@@ -77,7 +96,11 @@ table p {
   box-sizing: border-box;
   font-size: 16px;
 }
-#innertable textarea {
+table .innertable .content {
+  padding: 20px;
+  height: 250px;
+}
+table.innertable textarea {
   border: 1px solid gray;
   width: 400px;
   height: 200px;
@@ -87,7 +110,7 @@ table p {
   box-sizing: border-box;
   font-size: 16px;
 }
-#form_btn {
+.btn {
   width: 70px;
   height: 40px;
   margin: 5px;
@@ -98,5 +121,4 @@ table p {
   font-weight: bold;
   font-size: 15px;
   cursor: pointer;
-  float: right;
 }
