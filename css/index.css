@@ -8,12 +8,12 @@
 
 /* .column {
   margin-bottom: 300px;
-}
+} */
 
 .search {
   text-align: center;
   margin-bottom: 30px;
-} */
+}
 
 .wrap {
   display: flex;
@@ -51,12 +51,15 @@ td {
   align-items: center;
 }
 
-/* #search_opt,
 .textform {
   border: 1px solid #d9d9d9;
   border-radius: 5px;
   width: 300px;
   height: 30px;
+}
+
+#search_opt {
+  width: 65px;
 }
 
 .submit {
@@ -66,7 +69,7 @@ td {
   border: 1px solid gray;
   background: white;
   cursor: pointer;
-} */
+}
 
 .write {
   text-align: center;
@@ -91,7 +94,7 @@ a:link {
   text-decoration: none;
 }
 
-/* .paging {
+.paging {
   text-align: center;
 }
 
@@ -103,4 +106,4 @@ a:link {
 
 .paging a:hover {
   color: gray;
-} */
+}
