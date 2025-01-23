@@ -73,7 +73,6 @@ table.innertable .writer2 {
   width: 350px;
   height: 33px;
   padding-left: 10px;
-
 }
 table td {
   height: 35;
@@ -121,4 +120,8 @@ table.innertable textarea {
   font-weight: bold;
   font-size: 15px;
   cursor: pointer;
+}
+#board {
+  color: black;
+  font-size: 18px;
 }

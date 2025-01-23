@@ -48,7 +48,7 @@
     $total_page = ceil($num / $list_num);
     $total_block = ceil($total_page / $page_num);
     $now_block = ceil($page / $page_num);
-    
+
     $start_page = ($now_block - 1) * $page_num + 1;
     if ($start_page <= 0) {
         $start_page = 1;
@@ -58,7 +58,7 @@
         $end_page = $total_page;
     }
     // 시작번호
-    $start = ($page -1) * $list_num;
+    $start = ($page - 1) * $list_num;
 
     $sql = "SELECT * FROM board ORDER BY regdate DESC limit $start, $list_num;";    // limit a, b : a번부터 b개 출력
     $result = mysqli_query($db_conn, $sql);
@@ -67,7 +67,7 @@
     ?>
 
 
-    <p class="center"><a href="index.php"><b style="color:black">게시판</b></a></p>
+    <p class="center"><a href="index.php"><b id="board">&lt게시판&gt</b></a></p>
     <div class="center">
         <b><?php echo $_SESSION['name'] ?>님, 반갑습니다.</b>
         <!-- <button class="btn" onclick="location.href='../mypage/modify.php?user=<?= $_SESSION['id'] ?>'">내 정보</button> -->
@@ -80,13 +80,14 @@
 
     <div class="column">
         <div class="search">
-            <form method="get" action="search.php">
+            <form method="get" action="../board/search.php">
                 <select class="textform" id="search_opt" name="category" onchange="info()">
                     <option value="title">제목</option>
                     <option value="content">내용</option>
                     <option value="writer">작성자</option>
                 </select>
-                <input class="textform" id="search_box" type="text" name="search" autocomplete="off" placeholder="제목을 입력하세요." required>
+                <input class="textform" id="search_box" type="text" name="search" autocomplete="off"
+                    placeholder="제목을 입력하세요." required>
                 <input class="submit" type="submit" value="검색">
             </form>
         </div>
@@ -97,10 +98,10 @@
         <table class="center">
             <thead class="center">
                 <tr>
-                    <td class="headtd" width="100">작성자</td>
-                    <td class="headtd" width="400">제목</td>
-                    <td class="headtd" width="50">조회수</td>
-                    <td class="headtd" width="200">작성일</td>
+                    <th width="100">작성자</th>
+                    <th width="400">제목</th>
+                    <th width="50">조회수</th>
+                    <th width="200">작성일</th>
                 </tr>
             </thead>
             <tbody>
@@ -133,18 +134,18 @@
             <a href="index.php?page=1">&lt&lt</a>
             <?php
             if ($page <= 1) { ?>
-            <a href="index.php?page=1">이전</a>
+                <a href="index.php?page=1">이전</a>
             <?php } else { ?>
                 <a href="index.php?page=<?php echo $page - 1; ?>">이전</a>
             <?php } ?>
 
             <?php
             for ($print_page = $start_page; $print_page <= $end_page; $print_page++) {
-                if ($print_page == $page)  { ?>
+                if ($print_page == $page) { ?>
                     <u><a href="index.php?page=<?php echo $print_page; ?>"><?php echo $print_page; ?></a></u>
-                <?php } else {  ?>
+                <?php } else { ?>
                     <a href="index.php?page=<?php echo $print_page; ?>"><?php echo $print_page; ?></a>
-            <?php } 
+                <?php }
             } ?>
 
             <?php
