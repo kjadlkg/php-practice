@@ -46,6 +46,23 @@ h1 {
   box-sizing: border-box;
   font-size: 16px;
 }
+#myinfo_wrap span {
+  display: inline-block;
+  width: 80px;
+}
+.change_input {
+  border: 1px solid #d9d9d9;
+  width: 320px;
+  height: 40px;
+  margin: 5px;
+  padding-left: 10px;
+  border-radius: 10px;
+  box-sizing: border-box;
+  font-size: 16px;
+}
+#currentpw {
+  width: 96%;
+}
 
 #regist_wrap #regist_form input#checkIdBtn {
   position: relative;
@@ -78,7 +95,6 @@ h1 {
   /* color: white; */
   cursor: pointer;
 }
-/* 체크 시 표시될 영역 비표시(자바스크립트로 제어) */
 #regist_wrap #regist_form #result {
   display: none;
 }

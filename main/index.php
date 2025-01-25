@@ -6,19 +6,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/index.css" />
     <script>
-        function info() {
-            var opt = document.getElementById("search_opt");
-            var opt_val = opt.options[opt.selectedIndex].value;
-            var info = ""
-            if (opt_val == 'title') {
-                info = "제목을 입력하세요.";
-            } else if (opt_val == 'content') {
-                info = "내용을 입력하세요.";
-            } else if (opt_val == 'writer') {
-                info = "작성자를 입력하세요.";
-            }
-            document.getElementById("search_box").placeholder = info;
+    function info() {
+        var opt = document.getElementById("search_opt");
+        var opt_val = opt.options[opt.selectedIndex].value;
+        var info = ""
+        if (opt_val == 'title') {
+            info = "제목을 입력하세요.";
+        } else if (opt_val == 'content') {
+            info = "내용을 입력하세요.";
+        } else if (opt_val == 'writer') {
+            info = "작성자를 입력하세요.";
         }
+        document.getElementById("search_box").placeholder = info;
+    }
     </script>
     <title>메인 페이지</title>
 </head>
@@ -70,8 +70,7 @@
     <p class="center"><a href="index.php"><b id="board">&lt게시판&gt</b></a></p>
     <div class="center">
         <b><?php echo $_SESSION['name'] ?>님, 반갑습니다.</b>
-        <!-- <button class="btn" onclick="location.href='../mypage/modify.php?user=<?= $_SESSION['id'] ?>'">내 정보</button> -->
-        <button class="btn" onclick="location.href='../mypage/modify.php'">내 정보</button>
+        <button class="btn" onclick="location.href='../mypage/mypage.php?user=<?= $_SESSION['id'] ?>'">내 정보</button>
         <button class="btn" onclick="location.href='../member/login/logout.php'">로그아웃</button>
     </div>
     <hr>
@@ -108,17 +107,17 @@
                 <?php
                 while ($rows = mysqli_fetch_assoc($result)) {
                     ?>
-                    <tr>
-                        <td width="50"><?php echo $rows['writer'] ?></td>
-                        <td width="400">
-                            <a href="../board/read.php?idx=<?php echo $rows['idx'] ?>">
-                                <?php echo $rows['title'] ?>
-                            </a>
-                        </td>
-                        <td width="50"><?php echo $rows['views'] ?></td>
-                        <td width="200"><?php echo $rows['regdate'] ?></td>
-                    </tr>
-                    <?php
+                <tr>
+                    <td width="50"><?php echo $rows['writer'] ?></td>
+                    <td width="400">
+                        <a href="../board/read.php?idx=<?php echo $rows['idx'] ?>">
+                            <?php echo $rows['title'] ?>
+                        </a>
+                    </td>
+                    <td width="50"><?php echo $rows['views'] ?></td>
+                    <td width="200"><?php echo $rows['regdate'] ?></td>
+                </tr>
+                <?php
                 }
                 ?>
             </tbody>
@@ -134,25 +133,25 @@
             <a href="index.php?page=1">&lt&lt</a>
             <?php
             if ($page <= 1) { ?>
-                <a href="index.php?page=1">이전</a>
+            <a href="index.php?page=1">이전</a>
             <?php } else { ?>
-                <a href="index.php?page=<?php echo $page - 1; ?>">이전</a>
+            <a href="index.php?page=<?php echo $page - 1; ?>">이전</a>
             <?php } ?>
 
             <?php
             for ($print_page = $start_page; $print_page <= $end_page; $print_page++) {
                 if ($print_page == $page) { ?>
-                    <u><a href="index.php?page=<?php echo $print_page; ?>"><?php echo $print_page; ?></a></u>
-                <?php } else { ?>
-                    <a href="index.php?page=<?php echo $print_page; ?>"><?php echo $print_page; ?></a>
-                <?php }
+            <u><a href="index.php?page=<?php echo $print_page; ?>"><?php echo $print_page; ?></a></u>
+            <?php } else { ?>
+            <a href="index.php?page=<?php echo $print_page; ?>"><?php echo $print_page; ?></a>
+            <?php }
             } ?>
 
             <?php
             if ($page >= $total_page) { ?>
-                <a href="index.php?page=<?php echo $total_page; ?>">다음</a>
+            <a href="index.php?page=<?php echo $total_page; ?>">다음</a>
             <?php } else { ?>
-                <a href="index.php?page<?php echo $page + 1; ?>">다음</a>
+            <a href="index.php?page<?php echo $page + 1; ?>">다음</a>
             <?php } ?>
             <a href="index.php?page=<?php echo $total_page; ?>">&gt&gt</a>
         </p>
