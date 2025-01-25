@@ -1,0 +1,107 @@
+.btn {
+  border: none;
+  background-color: lightgray;
+  border-radius: 5px;
+  height: 25px;
+  color: black;
+}
+
+/* .column {
+  margin-bottom: 300px;
+} */
+
+.search {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.wrap {
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+
+.center {
+  text-align: center;
+  align-items: center;
+}
+
+table {
+  /* border-top: 1px solid #444444; */
+  border-collapse: collapse;
+  width: 1200px;
+  margin-bottom: 30px;
+  position: relative;
+}
+
+tr {
+  border-bottom: 1px solid #444444;
+  padding: 10px;
+}
+
+td {
+  border-bottom: 1px solid #efefef;
+  padding: 10px;
+}
+
+.textform {
+  border: 1px solid #d9d9d9;
+  border-radius: 5px;
+  width: 300px;
+  height: 30px;
+}
+
+#search_opt {
+  width: 65px;
+}
+
+.submit {
+  width: 60px;
+  height: 33px;
+  border-radius: 5px;
+  border: 1px solid gray;
+  background: white;
+  cursor: pointer;
+}
+
+.write {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.write button {
+  width: 70px;
+  height: 40px;
+  border-radius: 5px;
+  background: black;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  position: absolute;
+  right: 10%;
+  margin-top: 10px;
+}
+
+a:link {
+  color: #57a0ee;
+  text-decoration: none;
+}
+
+.paging {
+  text-align: center;
+}
+
+.paging a {
+  color: black;
+  font-weight: bold;
+  font-size: 15px;
+}
+
+.paging a:hover {
+  color: gray;
+}
+
+#board {
+  color: black;
+  font-size: 18px;
+}
